@@ -4,6 +4,7 @@
   font-family: Brush Script MT;
   font-style: oblique;
 }
+
 .App-header {
   background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-03/1614597819_30-p-gori-na-belom-fone-52.jpg);
   background-position: center;
@@ -15,19 +16,59 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
 }
+
 .generalText {
   margin-right: 34px;
   color: #ffffff;
   text-shadow: 0 0 5px black, 0 0 10px black;
 }
+
 .centerText {
   margin-top: 49px;
   color: #ffffff;
   text-shadow: 0 0 5px black, 0 0 10px black;
 }
+
 .endingText {
   margin-left: 557px;
   color: #ffffff;
   text-shadow: 0 0 5px black, 0 0 10px black;
   text-decoration: none;
 }
+
+.chat {}
+
+.chatText {
+  color: #ffffff;
+  text-shadow: 0 0 5px black, 0 0 10px black;
+}
+
+.btn {
+  cursor: pointer;
+  position: fixed;
+  text-align: center;
+  top: 560px;
+  left: 618px;
+}
+
+.newmessage {
+  position: relative;
+  font-size: 30px;
+  font-family: sans-serif;
+  color: #c9f6f6;
+}
+
+.chatbox {
+  display: block;
+  position: fixed;
+  right: 58%;
+  top: 52%;
+}
+
+position: relative;
+
+right: 0;
+bottom: 0;
+left: 0;
+text-align: center;
+z-index: 10;

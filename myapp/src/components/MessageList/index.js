@@ -23,7 +23,7 @@ export const MessageList = (props) =>{
     <p class="chatText">Чат</p>
     <input type="text"></input>
     </form>
-    <button class="btn" onClick={handleAddMessage}>Add message</button>
+    <button class="btn2" onClick={handleAddMessage}>Add message</button>
       {messages.map((message) => <Message text={message} />)}
       </div>
 

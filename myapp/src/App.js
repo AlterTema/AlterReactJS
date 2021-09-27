@@ -1,22 +1,10 @@
-import './App.css';
-import {SimpleText} from './components';
-import {MessageList} from '../src/components/MessageList'
-
-
-
+import { Routes } from "./components/Routes";
+import "./App.scss";
 
 function App() {
-//...
-   
-    
   return (
-    <div className = "App">
-      <SimpleText name="AlterTema"/>
-   <MessageList />
-    
-    </div>
+   <Routes  />
   );
 }
 
 export default App;
-

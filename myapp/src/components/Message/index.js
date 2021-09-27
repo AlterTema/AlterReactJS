@@ -1,4 +1,5 @@
 import React from "react";
 
-export const Message = ({text}) => <div class="newmessage">{text}</div>;
-
+export const Message = ({ text, onClick, id }) => {
+  return <div class="class_chat_text">{text}</div>;
+};

@@ -7,10 +7,14 @@ import { Profile, ThemedProfile } from "../Profile";
 export const Routes = () => {
   return (
     <BrowserRouter>
-    <div class="Browser_router">
-      <Link class="btn_home" to="/chats">Чаты</Link>
-      <Link class="btn_home" to="/profile">Сменить тему</Link>
-      </div>
+      <ul>
+        <li>
+          <Link to="/chats">CHATS</Link>
+        </li>
+        <li>
+          <Link to="/profile">Profile</Link>
+        </li>
+      </ul>
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -28,4 +32,3 @@ export const Routes = () => {
     </BrowserRouter>
   );
 };
-

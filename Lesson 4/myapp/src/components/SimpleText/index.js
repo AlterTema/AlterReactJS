@@ -14,7 +14,6 @@ export const SimpleText = ({ name, age, someObj }) => {
   );
 };
 
-
 class Message extends React.Component {
   render() {
     const { question, onClick } = this.props;

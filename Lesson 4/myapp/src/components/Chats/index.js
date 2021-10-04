@@ -5,18 +5,19 @@ import { AUTHORS } from "../../utils/constants";
 import { Form } from "../Form";
 import { ChatList } from "../Chatlist";
 
-const initialMessages = {
-  "chat-1": [
-    { text: "Привет, GeekBrain!!!", author: "HUMAN", id: "mess-2" },
-    { text: "GeekBrain, привет!!!", author: "HUMAN", id: "mess-1" },
-  ],
-  "chat-2": [],
-};
-
 const initialChats = [
-  { name: "Чат №1", id: "chat-1" },
-  { name: "Чат №2", id: "chat-2" },
+  { text: "Привет, GeekBrain!!!", author: "HUMAN", id: "mess-2" },
+  { text: "GeekBrain, привет!!!", author: "HUMAN", id: "mess-1" },
 ];
+
+const initialMessages = initialChats.reduce((acc, chat) => {
+  acc[chat.id] = [];
+
+  return acc
+}, {});
+
+console.log(initialMessages);
+
 
 function Chats(props) {
   console.log(props);
@@ -45,7 +46,7 @@ function Chats(props) {
     if (!!chatId && curMess?.[curMess.length - 1]?.author === AUTHORS.HUMAN) {
       timeout = setTimeout(() => {
         sendMessage({
-          text: "Привет от бота",
+          text: "Привет от бота!!!",
           author: AUTHORS.bot,
           id: `mess-${Date.now()}`,
         });
@@ -67,7 +68,7 @@ function Chats(props) {
   );
 
   return (
-    <div className="App" class="App">
+    <div className="App">
       <ChatList chats={chats} onAddChat />
       {!!chatId && (
         <>

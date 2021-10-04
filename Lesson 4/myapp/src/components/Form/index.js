@@ -22,7 +22,7 @@ export const Form = ({ onSubmit }) => {
   console.log(inputRef);
 
   return (
-    <form class="class_chat"onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <TextField
         placeholder="message"
         label="Label"
@@ -33,7 +33,7 @@ export const Form = ({ onSubmit }) => {
       <Button>
         {(text) => (
         <>
-          <span>Made by </span>
+          <span>RENDER PROP</span>
           <span>{text}</span>
         </>
         )}

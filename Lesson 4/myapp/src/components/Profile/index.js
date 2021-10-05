@@ -35,9 +35,9 @@ export const Profile = ({ theme }) => {
 
   return (
     <>
-     <div class="toogle_btn">
-      {<button class="btn_theme" onClick={theme.changeTheme}>Toggle theme</button> }
-      <button class="btn_theme" onClick={handleClick}>Toggle show name</button></div>
+    <div class="toogle_btn">
+      <button class="btn_theme" onClick={theme.changeTheme}>Toggle theme</button>
+      {/*<button class="btn_theme" onClick={handleClick}>Toggle show name</button>*/}</div>
       <div class="toogle_btn">
       <form onSubmit={handleSubmit}>
         <input type="text" value={value} onChange={handleChange} />
@@ -55,7 +55,7 @@ export const Profile = ({ theme }) => {
 
 export const ThemedProfile = withContext(Profile);
 
-
+// HOF
 
 const add = (a, b) => a + b;
 const sub = (a, b) => a - b;
@@ -72,3 +72,4 @@ const addWithLogger = withLogger(add);
 const subWithLogger = withLogger(sub);
 const mulWithLogger = withLogger(mul);
 
+// Higher Order Component

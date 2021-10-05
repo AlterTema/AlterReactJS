@@ -14,7 +14,7 @@ export const ChatItem = ({ chat, onDelete, id }) => {
   return (
     <ListItem>
       <Link class="chats_number" to={`/chats/${chat.id}`}>{chat.name}</Link>
-      <button class="chats_number" onClick={handleDelete}>delete</button>
+      <span class="chats_number" onClick={handleDelete}>delete</span>
     </ListItem>
   );
 };

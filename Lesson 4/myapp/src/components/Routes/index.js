@@ -9,10 +9,10 @@ export const Routes = () => {
     <BrowserRouter>
       <ul>
         <li>
-          <Link to="/chats">CHATS</Link>
+        <Link class="btn_home" to="/chats">Чаты</Link>
         </li>
         <li>
-          <Link to="/profile">Profile</Link>
+        <Link class="btn_home" to="/profile">Сменить тему</Link>
         </li>
       </ul>
       <Switch>

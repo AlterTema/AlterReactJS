@@ -17,8 +17,8 @@ import { addMessage } from "../../store/messages/actions";
 import { selectIfChatExists } from "../../store/chats/selectors";
 
 const initialChats = [
-  { name: "chat1", id: "chat-1" },
-  { name: "Chat 2", id: "chat-2" },
+  { text: "Привет, GeekBrain!!!", author: "HUMAN", id: "mess-2" },
+  { text: "GeekBrain, привет!!!", author: "HUMAN", id: "mess-1" },
 ];
 
 const initialMessages = initialChats.reduce((acc, chat) => {
@@ -28,14 +28,6 @@ const initialMessages = initialChats.reduce((acc, chat) => {
 }, {});
 
 console.log(initialMessages);
-
-// const initialMessages = {
-//   "chat-1": [
-//     { text: "nnnn", author: "HUMAN", id: "mess-2" },
-//     { text: "nnnn", author: "HUMAN", id: "mess-1" },
-//   ],
-//   "chat-2": [],
-// };
 
 function Chats(props) {
   const { chatId } = useParams();
@@ -62,8 +54,8 @@ function Chats(props) {
 
     if (!!chatId && curMess?.[curMess.length - 1]?.author === AUTHORS.HUMAN) {
       timeout = setTimeout(() => {
-        sendMessage("I am bot", AUTHORS.bot);
-      }, 3000);
+        sendMessage("Привет от бота!!!", AUTHORS.bot);
+      }, 1500);
     }
 
     return () => clearTimeout(timeout);

@@ -35,17 +35,18 @@ export const Profile = ({ theme }) => {
 
   return (
     <>
-      {/* <button onClick={theme.changeTheme}>Toggle theme</button> */}
-      <button onClick={handleClick}>Toggle show name</button>
-
+     <div class="toogle_btn">
+      {<button class="btn_theme" onClick={theme.changeTheme}>Toggle theme</button> }
+      <button class="btn_theme" onClick={handleClick}>Toggle show name</button></div>
+      <div class="toogle_btn">
       <form onSubmit={handleSubmit}>
         <input type="text" value={value} onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>
 
-      {showName && <div>{name}</div>}
+      {showName && <div class="profile_theme">{name}</div>}</div>
 
-      <h3 style={{ color: theme.theme === "light" ? "red" : "black" }}>
+      <h3 class="profile_theme" style={{ color: theme.theme === "light" ? "red" : "black" }}>
         This is profile page
       </h3>
     </>
@@ -53,6 +54,7 @@ export const Profile = ({ theme }) => {
 };
 
 export const ThemedProfile = withContext(Profile);
+
 
 
 const add = (a, b) => a + b;
@@ -69,3 +71,4 @@ const withLogger = (fn) => {
 const addWithLogger = withLogger(add);
 const subWithLogger = withLogger(sub);
 const mulWithLogger = withLogger(mul);
+

@@ -13,8 +13,8 @@ export const ChatItem = ({ chat, onDelete, id }) => {
   console.log(showName);
   return (
     <ListItem>
-      <Link to={`/chats/${chat.id}`}>{chat.name}</Link>
-      <span onClick={handleDelete}>delete</span>
+      <Link class="chats_number" to={`/chats/${chat.id}`}>{chat.name}</Link>
+      <button class="chats_number" onClick={handleDelete}>delete</button>
     </ListItem>
   );
 };

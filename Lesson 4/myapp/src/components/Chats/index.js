@@ -1,0 +1,100 @@
+import { useState, useEffect, useCallback, useMemo } from "react";
+import {
+  useParams,
+  useRouteMatch,
+  useHistory,
+  useLocation,
+  Redirect,
+} from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
+import { Message } from "../Message";
+import { AUTHORS } from "../../utils/constants";
+import { Form } from "../Form";
+import { ChatList } from "../Chatlist";
+import { addChat, deleteChat } from "../../store/chats/actions";
+import { addMessageWithReply } from "../../store/messages/actions";
+import { selectIfChatExists } from "../../store/chats/selectors";
+
+const initialChats = [
+  { text: "Привет, GeekBrain!!!", author: "HUMAN", id: "mess-2" },
+  { text: "GeekBrain, привет!!!", author: "HUMAN", id: "mess-1" },
+];
+
+const initialMessages = initialChats.reduce((acc, chat) => {
+  acc[chat.id] = [];
+
+  return acc;
+}, {});
+
+console.log(initialMessages);
+
+function Chats(props) {
+  const { chatId } = useParams();
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const messages = useSelector((state) => state.messages.messages);
+  const chats = useSelector((state) => state.chats.chats);
+
+  const selectChatExists = useMemo(() => selectIfChatExists(chatId), [chatId]);
+  const chatExists = useSelector(selectChatExists);
+
+  const sendMessage = useCallback(
+    (text, author) => {
+      dispatch(addMessageWithReply(chatId, text, author));
+    },
+    [chatId]
+  );
+
+  const handleAddMessage = useCallback(
+    (text) => {
+      sendMessage(text, AUTHORS.HUMAN);
+    },
+    [sendMessage]
+  );
+
+  const handleAddChat = useCallback(
+    (name) => {
+      dispatch(addChat(name));
+    },
+    [dispatch]
+  );
+
+  const handleDeleteChat = useCallback(
+    (id) => {
+      dispatch(deleteChat(id));
+
+      if (chatId !== id) {
+        return;
+      }
+
+      if (chats.length === 1) {
+        history.push(`/chats/${chats[0].id}`);
+      } else {
+        history.push(`/chats`);
+      }
+    },
+    [chatId, dispatch, chats, history]
+  );
+
+  return (
+    <div className="App">
+      <ChatList
+        chats={chats}
+        onAddChat={handleAddChat}
+        onDeleteChat={handleDeleteChat}
+      />
+      {!!chatId && chatExists && (
+        <>
+          {(messages[chatId] || []).map((message) => (
+            <Message key={message.id} text={message.text} id={message.id} />
+          ))}
+          <Form onSubmit={handleAddMessage} />
+        </>
+      )}
+    </div>
+  );
+}
+
+export default Chats;

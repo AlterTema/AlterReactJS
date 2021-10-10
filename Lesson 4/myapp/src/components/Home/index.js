@@ -1,3 +1,37 @@
-export const Home = () => {
-  return <h3 class="home_page2"><a class="home_page" href="http://localhost:3000">Главная страница</a></h3>;
+import { useState } from "react";
+
+export const Home = ({ onLogin, onSignUp }) => {
+  const [login, setLogin] = useState("");
+  const [pass, setPass] = useState("");
+
+  const handleLoginChange = (e) => {
+    setLogin(e.target.value);
+  };
+
+  const handlePassChange = (e) => {
+    setPass(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLogin("");
+    setPass("");
+    if (!!onLogin) {
+      onLogin(login, pass);
+    } else {
+      onSignUp(login, pass);
+    }
+  };
+
+  return (
+    <>
+    <div class="login_block">
+      <h3 class="btn_home" >{!!onLogin ? 'Login' : 'SignUp'}</h3>
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={login} onChange={handleLoginChange} />
+        <input type="password" value={pass} onChange={handlePassChange} />
+        <input type="submit" />
+      </form></div>
+    </>
+  );
 };

@@ -30,7 +30,7 @@ export const Form = ({ onSubmit }) => {
         inputRef={inputRef}
       />
       <Button variant="outlined" type="submit">
-        Send
+        Отправить
       </Button>
     </form>
   );

@@ -47,7 +47,7 @@ export const Profile = ({ theme }) => {
       {showName && <div class="profile_theme">{name}</div>}</div>
 
       <h3 class="profile_theme" style={{ color: theme.theme === "light" ? "red" : "black" }}>
-        This is profile page
+       Добро пожаловать на странице профиля
       </h3>
     </>
   );

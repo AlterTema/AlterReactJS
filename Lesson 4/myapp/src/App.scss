@@ -1,0 +1,129 @@
+.App {
+  margin: 0 auto;
+  max-width: 1140px;
+  margin-left: 30%;
+}
+
+.home_page2 {
+  align-items: center;
+}
+
+.home_page {
+  display: flex;
+  justify-content: center;
+  color: aliceblue !important;
+  text-shadow: 0 0 5px black, 0 0 10px black;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.my-button {}
+
+
+.btn_home {
+  text-shadow: 0 0 5px black, 0 0 10px black;
+  cursor: pointer;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+body {
+  background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-03/1614597819_30-p-gori-na-belom-fone-52.jpg);
+  font-family: COURIER;
+  background-position: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.chats_number {
+  width: 86px;
+  height: 23px;
+  cursor: pointer;
+}
+
+.chats_number2 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.class_chat {
+  text-shadow: 0 0 4px black, 0 0 3px black;
+  cursor: pointer;
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.class_chat_text {
+  text-shadow: 0 0 1px white, 0 0 2px white;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  margin-left: 55px;
+}
+
+.class_chat_general {
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  text-shadow: 0 0 5px black, 0 0 10px black;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 45px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Browser_router {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.btn_theme {
+  text-shadow: 0 0 5px white, 0 0 10px white;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.toogle_btn {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.profile_theme {
+  display: flex;
+  justify-content: center;
+}
